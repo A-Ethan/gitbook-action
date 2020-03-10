@@ -1033,8 +1033,71 @@ required: &apos;false&apos;</li>
 <span class="hljs-attr">        publish2_repo:</span> gitbook-org/gitbook   <span class="hljs-comment"># publish for another repo dir default root</span>
 </code></pre>
 <h2 id="faq">FAQ   </h2>
-<p><a href="https://zanderzhao.github.io/error.html" target="_blank">ERROR</a></p>
-<p><a href="https://zanderzhao.github.io/warning.html" target="_blank">WARNING</a></p>
+<h3 id="error"><a href="https://zanderzhao.github.io/gitbook-action/error.html" target="_blank">ERROR</a></h3>
+<h3 id="warning"><a href="https://zanderzhao.github.io/gitbook-action/warning.html" target="_blank">WARNING</a></h3>
+<h3 id="qa">Q&amp;A</h3>
+<ul>
+<li><p>About last edit time</p>
+<ul>
+<li>How to keep the last edit time ?<ul>
+<li>Add <code>source_edit_time: true</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>About CNAME</p>
+<ul>
+<li>How to add CNAME ?<ul>
+<li>Add <code>publish_cname: www.example.com</code></li>
+<li>And add two CNAME like <code>publish_cname: example.com www.example.com</code><ul>
+<li><code>example.com</code> and <code>www.example.com</code>should have space.</li>
+</ul>
+</li>
+<li><a href="https://help.github.com/cn/github/working-with-github-pages/troubleshooting-custom-domains-and-github-pages#custom-domain-names-that-are-unsupported" target="_blank">Github pages: custom-domain-names-that-are-unsupported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>About PDF/EPUB/MOBI</p>
+<ul>
+<li>How to build pdf ?<ul>
+<li>Add <code>gitbook_pdf: true</code><ul>
+<li>You can choose <code>gitbook_pdf_dir</code> and <code>gitbook_pdf_name</code></li>
+<li><a href="https://zanderzhao.github.io/gitbook-action/#gitbooksetting" target="_blank">Detail</a></li>
+</ul>
+</li>
+<li>Why the font format is wrong ?<ul>
+<li>You need install font, add <code>font_install</code></li>
+<li>example: <code>font_install: sudo apt-get install fonts-noto-cjk</code>or<code>font_install: sudo apt-get install ttf-mscorefonts-installer</code>,use sudo install for global.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>About source_repo</p>
+<ul>
+<li><p>source_repo is the repo where gitbook-source(SUMMARY.md README.md) deposit</p>
+</li>
+<li><p>you can set <code>source_repo</code>&#x3001; <code>source_branch</code>and<code>source_dir</code></p>
+<ul>
+<li>example: <a href="https://github.com/GitbookIO/gitbook/tree/master/docs" target="_blank">https://github.com/GitbookIO/gitbook/tree/master/docs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>        source_repo: GitbookIO/gitbook
+        source_branch: master
+        source_dir: docs
+</code></pre><ul>
+<li>About publish_repo<ul>
+<li>publish_repo is the file gitbook build push to</li>
+<li>you can set <code>publish_repo</code>&#x3001;<code>publish_branch</code>and<code>publish_dir</code></li>
+<li>This action <strong>only change</strong> the file in <code>publish_dir</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="community">Community   </h2>
 <p><a href="https://gitter.im/Gitbook-Action/community" target="_blank">Gitter</a></p>
 <h2 id="external">External links  </h2>
@@ -1048,7 +1111,7 @@ required: &apos;false&apos;</li>
 </li>
 </ul>
 <p><footer class="page-footer"><span class="copyright">Edit by Zander Zhao ;    Powered By Gitbook</span><span class="footer-modification"><span id="busuanzi_container_page_pv">View Count: <span id="busuanzi_value_page_pv"></span>  </span>; Last Edit:
-2020-03-09 15:10:22
+2020-03-10 16:21:34
 </span></footer><script async src="//cdn.jsdelivr.net/gh/ZanderZhao/cdn/js/busuanzi.pure.mini.js"></script></p>
 
                                 
@@ -1089,7 +1152,7 @@ required: &apos;false&apos;</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"Add Action","level":"1.2","depth":1,"anchor":"#addaction","path":"how-to-use.md","ref":"how-to-use.md#addaction","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","mygitalk@git+https://github.com/plugins-zander/gitbook-plugin-mygitalk.git","edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git","sitemap-general@git+https://github.com/plugins-zander/gitbook-plugin-sitemap-general.git","tbfed-pagefooter@git+https://github.com/plugins-zander/gitbook-plugin-tbfed-pagefooter.git","todo@git+https://github.com/plugins-zander/gitbook-plugin-todo.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Edit by Zander Zhao ; ","modify_bszlabel":"<span id=\"busuanzi_container_page_pv\">View Count: <span id=\"busuanzi_value_page_pv\"></span>  </span>","modify_label":"Last Edit:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"todo":{},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://zlogs.net/gitbook-action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"mygitalk":{"flipMoveOptions":{},"clientID":"364365ceb2659b383d73","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["zanderzhao"],"createIssueManually":false,"distractionFreeMode":false,"repo":"talk","owner":"zanderzhao","enableHotKey":true,"clientSecret":"447ef6648e9dfffe2e2a65c34c8ead1dd4b7af54","pagerDirection":"last","labels":["Gitalk"]},"edit-link":{"label":"EDIT","base":"https://github.com/ZanderZhao/gitbook-action/edit/master/gitbook-source"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Zander Zhao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","links":{"sidebar":{"# Marketplace":"https://github.com/marketplace/actions/gitbook-action","# Github":"https://github.com/ZanderZhao/gitbook-action"}},"gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"README.md","mtime":"2020-03-09T07:10:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T07:12:30.545Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"Add Action","level":"1.2","depth":1,"anchor":"#addaction","path":"how-to-use.md","ref":"how-to-use.md#addaction","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","mygitalk@git+https://github.com/plugins-zander/gitbook-plugin-mygitalk.git","edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git","sitemap-general@git+https://github.com/plugins-zander/gitbook-plugin-sitemap-general.git","tbfed-pagefooter@git+https://github.com/plugins-zander/gitbook-plugin-tbfed-pagefooter.git","todo@git+https://github.com/plugins-zander/gitbook-plugin-todo.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Edit by Zander Zhao ; ","modify_bszlabel":"<span id=\"busuanzi_container_page_pv\">View Count: <span id=\"busuanzi_value_page_pv\"></span>  </span>","modify_label":"Last Edit:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"todo":{},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://zlogs.net/gitbook-action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"mygitalk":{"flipMoveOptions":{},"clientID":"364365ceb2659b383d73","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["zanderzhao"],"createIssueManually":false,"distractionFreeMode":false,"repo":"talk","owner":"zanderzhao","enableHotKey":true,"clientSecret":"447ef6648e9dfffe2e2a65c34c8ead1dd4b7af54","pagerDirection":"last","labels":["Gitalk"]},"edit-link":{"label":"EDIT","base":"https://github.com/ZanderZhao/gitbook-action/edit/master/gitbook-source"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Zander Zhao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","links":{"sidebar":{"# Marketplace":"https://github.com/marketplace/actions/gitbook-action","# Github":"https://github.com/ZanderZhao/gitbook-action"}},"gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"README.md","mtime":"2020-03-10T08:21:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T08:26:49.235Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
