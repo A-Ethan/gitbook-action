@@ -25,10 +25,6 @@
                 
             
                 
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ZanderZhao/cdn/css/gitalk.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -443,25 +439,25 @@
 <span class="hljs-attr">    steps:</span>
 <span class="hljs-attr">    - name:</span> Checkout action
 <span class="hljs-attr">      uses:</span> actions/checkout@v2
-<span class="hljs-attr">    - name:</span> Gitbook Action
-<span class="hljs-attr">      uses:</span> ZanderZhao/gitbook-action@v1<span class="hljs-number">.2</span><span class="hljs-number">.3</span>  <span class="hljs-comment"># -&gt; or ZanderZhao/gitbook-action@master </span>
+<span class="hljs-attr">    - name:</span> Gitbook Action                    <span class="hljs-comment"># https://github.com/ZanderZhao/gitbook-action/releases</span>
+<span class="hljs-attr">      uses:</span> ZanderZhao/gitbook-action@v1<span class="hljs-number">.2</span><span class="hljs-number">.4</span>  <span class="hljs-comment"># -&gt; or ZanderZhao/gitbook-action@master.If not use master click above, use latest please </span>
 <span class="hljs-attr">      with:</span>                                   <span class="hljs-comment">#    or fork this repo and use YourName/gitbook-action@master</span>
 <span class="hljs-attr">        token:</span> ${{ secrets.PERSONAL_TOKEN }}  <span class="hljs-comment"># -&gt; remember add this in settings/secrets as following</span>
 </code></pre>
-<p>&#x200B;    <a href="https://zanderzhao.github.io/gitbook-action/how-to-use.html#addaction" target="_blank">Detailed step</a>    <a href="https://help.github.com/cn/actions/getting-started-with-github-actions/starting-with-preconfigured-workflow-templates" target="_blank">Official introduction</a></p>
+<p>&#x200B;    <a href="https://zanderzhao.github.io/gitbook-action/how-to-use.html#addaction" target="_blank">Detailed step</a>  |  <a href="https://help.github.com/cn/actions/getting-started-with-github-actions/starting-with-preconfigured-workflow-templates" target="_blank">Official introduction</a></p>
 <h3 id="step2--generate-token-and-add-to-secrets"><strong>STEP2</strong>  Generate Token and add to Secrets</h3>
 <p>Create token from <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a></p>
 <ul>
 <li>choose repo</li>
 <li>click Generate token</li>
 </ul>
-<p>&#x200B;       <a href="https://zanderzhao.github.io/gitbook-action/how-to-use.html#createtoken" target="_blank">Detailed step</a>    <a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token" target="_blank">Official introduction</a></p>
+<p>&#x200B;       <a href="https://zanderzhao.github.io/gitbook-action/how-to-use.html#createtoken" target="_blank">Detailed step</a> |   <a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token" target="_blank">Official introduction</a></p>
 <p>Add your token to <a href="https://github.com/" target="_blank">https://github.com/</a> <strong>yourname/yourrepo</strong> /settings/secrets</p>
 <ul>
 <li>Name: PERSONAL_TOKEN</li>
 <li>Value: which you get before</li>
 </ul>
-<p>&#x200B;       <a href="https://zanderzhao.github.io/gitbook-action/how-to-use.html#addtoken" target="_blank">Detail step</a>    <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets#creating-encrypted-secrets" target="_blank">Official introduction</a></p>
+<p>&#x200B;       <a href="https://zanderzhao.github.io/gitbook-action/how-to-use.html#addtoken" target="_blank">Detail step</a>  |  <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets#creating-encrypted-secrets" target="_blank">Official introduction</a></p>
 <h3 id="step3-choose-options"><strong>STEP3</strong> Choose options</h3>
 <ul>
 <li><strong>Set Default Above</strong> source branch is <code>master</code>, and the target branch is <code>gh-pages</code>. If <code>gh-pages</code> does not exist, it will be created automatically.</li>
@@ -478,13 +474,10 @@
 </li>
 </ul>
 <ul>
-<li><p><strong>git_email:</strong></p>
-<ul>
+<li><strong>git_email:</strong></li>
 <li><p>description: &apos; If git name is different with github, please add&apos;</p>
 </li>
 <li><p>default: <a href="https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address#setting-your-commit-email-address-on-github" target="_blank">**@users.noreply.github.com</a></p>
-</li>
-</ul>
 </li>
 </ul>
 <ul>
@@ -513,13 +506,10 @@
 </li>
 </ul>
 <ul>
-<li><p><strong>source_hub</strong>:</p>
-<ul>
+<li><strong>source_hub</strong>:</li>
 <li><p>description: &apos;default is github.com,can be gitlib.com  gitee.com ...&apos;</p>
 </li>
 <li><p>default: &apos;github.com&apos;</p>
-</li>
-</ul>
 </li>
 <li><p><strong>source_branch</strong>:</p>
 <ul>
@@ -585,18 +575,15 @@
 <li><p><strong>publish_commit_message</strong>:</p>
 <ul>
 <li>description: &apos;Default Updated by gitbook-action and time, can use last commit message&apos;</li>
-<li>Tip: can set <code>$</code> as <a href="https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context" target="_blank">last commit message</a></li>
+<li>Tip: can set  <code>github.event.head_commit.message</code>  as <a href="https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context" target="_blank">last commit message</a>  <a href="https://github.com/ZanderZhao/gitbook-action/blob/master/.github/workflows/gitbook-action.yml" target="_blank">example1</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><p><strong>publish_hub</strong>:</p>
-<ul>
+<li><strong>publish_hub</strong>:</li>
 <li><p>description: &apos;Default is github.com,can be gitlib.com gitee.com ...&apos;</p>
 </li>
 <li><p>default: &apos;github.com&apos;</p>
-</li>
-</ul>
 </li>
 <li><p><strong>publish_branch</strong>:</p>
 <ul>
@@ -1041,8 +1028,8 @@ required: &apos;false&apos;</li>
 
     <span class="hljs-comment"># example1--&gt; https://ZanderZhao.github.io/gitbook-action</span>
 <span class="hljs-attr">    - name:</span> Gitbook Action
-<span class="hljs-attr">      uses:</span> zanderzhao/gitbook-action@v1<span class="hljs-number">.2</span>
-<span class="hljs-attr">      with:</span>
+<span class="hljs-attr">      uses:</span> zanderzhao/gitbook-action@v1<span class="hljs-number">.2</span><span class="hljs-number">.4</span> <span class="hljs-comment"># https://github.com/ZanderZhao/gitbook-action/releases </span>
+<span class="hljs-attr">      with:</span>                                <span class="hljs-comment"># Just example, click above, use latest please </span>
 <span class="hljs-attr">        token:</span> ${{ secrets.PERSONAL_TOKEN }}
 <span class="hljs-attr">        time_zone:</span> Asia/Shanghai   <span class="hljs-comment"># set time zone</span>
 <span class="hljs-attr">        source_dir:</span> source         <span class="hljs-comment"># clone from source</span>
@@ -1051,7 +1038,7 @@ required: &apos;false&apos;</li>
 
     <span class="hljs-comment"># example2--&gt; https://ZanderZhao.github.io/gitbook-action/gitbook-docs</span>
 <span class="hljs-attr">    - name:</span> Gitbook Action
-<span class="hljs-attr">      uses:</span> zanderzhao/gitbook-action@v1<span class="hljs-number">.2</span>
+<span class="hljs-attr">      uses:</span> zanderzhao/gitbook-action@v1<span class="hljs-number">.2</span><span class="hljs-number">.4</span>
 <span class="hljs-attr">      with:</span>
 <span class="hljs-attr">        token:</span> ${{ secrets.PERSONAL_TOKEN }} 
 <span class="hljs-attr">        time_zone:</span> Asia/Shanghai
@@ -1174,7 +1161,7 @@ required: &apos;false&apos;</li>
 <li><a href="https://github.com/marketplace/actions/github-pages-action" target="_blank">https://github.com/marketplace/actions/github-pages-action</a></li>
 <li><a href="https://github.com/marketplace/actions/publish-gitbook" target="_blank">https://github.com/marketplace/actions/publish-gitbook</a></li>
 <li><a href="https://ZanderZhao.github.io/gitbook-action" target="_blank">https://ZanderZhao.github.io/gitbook-action</a></li>
-<li><a href="https://help.github.com/en/actions" target="_blank">https://help.github.com/en/actions</a><div id="gitalk-container"></div></li>
+<li><a href="https://help.github.com/en/actions" target="_blank">https://help.github.com/en/actions</a></li>
 </ul>
 
                                 
@@ -1215,7 +1202,7 @@ required: &apos;false&apos;</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"Add Action","level":"1.2","depth":1,"anchor":"#addaction","path":"how-to-use.md","ref":"how-to-use.md#addaction","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","mygitalk@git+https://github.com/plugins-zander/gitbook-plugin-mygitalk.git","edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git","sitemap-general@git+https://github.com/plugins-zander/gitbook-plugin-sitemap-general.git","gtag@git+https://github.com/plugins-zander/gitbook-plugin-gtag.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://zlogs.net/gitbook-action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"UA-149127400-1"},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"mygitalk":{"flipMoveOptions":{},"clientID":"364365ceb2659b383d73","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["zanderzhao"],"createIssueManually":false,"distractionFreeMode":false,"repo":"talk","owner":"zanderzhao","enableHotKey":true,"clientSecret":"447ef6648e9dfffe2e2a65c34c8ead1dd4b7af54","pagerDirection":"last","labels":["Gitalk"]},"edit-link":{"label":"EDIT","base":"https://github.com/ZanderZhao/gitbook-action/edit/master/gitbook-source"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Zander Zhao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"README.md","mtime":"2020-10-21T09:06:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-21T09:08:28.195Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"Add Action","level":"1.2","depth":1,"anchor":"#addaction","path":"how-to-use.md","ref":"how-to-use.md#addaction","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git","sitemap-general@git+https://github.com/plugins-zander/gitbook-plugin-sitemap-general.git","gtag@git+https://github.com/plugins-zander/gitbook-plugin-gtag.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://zlogs.net/gitbook-action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"UA-149127400-1"},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"edit-link":{"label":"EDIT","base":"https://github.com/ZanderZhao/gitbook-action/edit/master/gitbook-source"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Zander Zhao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"README.md","mtime":"2020-10-23T15:24:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-23T15:26:32.840Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -1234,18 +1221,6 @@ required: &apos;false&apos;</li>
     
         
         <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="https://cdn.jsdelivr.net/gh/ZanderZhao/cdn/js/md5.min.js"></script>
-        
-    
-        
-        <script src="https://cdn.jsdelivr.net/gh/ZanderZhao/cdn/js/gitalk.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
         
     
         

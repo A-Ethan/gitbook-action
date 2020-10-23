@@ -25,10 +25,6 @@
                 
             
                 
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ZanderZhao/cdn/css/gitalk.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
                 
             
@@ -449,7 +445,7 @@
 <li>can&apos;t git clone repo</li>
 <li>maybe not exists this <code>source_repo</code></li>
 <li>or you don&apos;t add <code>token</code> </li>
-<li>or the <code>token</code> or<code>source_token</code>without oath</li>
+<li>or the <code>token</code> or<code>source_token</code>without auth</li>
 </ul>
 </li>
 </ul>
@@ -493,7 +489,7 @@
 <ul>
 <li>Can&apos;t push publish_repo/branch, maybe not add publish_token(with access) in gitbook_action.yml<ul>
 <li>can&apos;t push and push force sucess</li>
-<li>maybe your token without oath to push this repo</li>
+<li>maybe your token without auth to push this repo</li>
 </ul>
 </li>
 </ul>
@@ -501,7 +497,7 @@
 <ul>
 <li>Can&apos;t push publish_repo/branch, maybe not add publish_token(with access) in gitbook_action.yml or try set publish_push_force true<ul>
 <li>can&apos;t push sucess</li>
-<li>maybe your token without oath to push this repo</li>
+<li>maybe your token without auth to push this repo</li>
 <li>or try to allow push force, add <code>publish_push_force: true</code></li>
 </ul>
 </li>
@@ -516,7 +512,7 @@
 </ul>
 <p>3201</p>
 <ul>
-<li><p>description <a href="https://github.com/ZanderZhao/gitbook-action/issues/4" target="_blank">Unable to publish to github pages</a></p>
+<li><p>description <a href="https://github.com/ZanderZhao/gitbook-action/issues/4" target="_blank">Publish sucessfully, But Github pages build fail</a></p>
 <ul>
 <li><p>The workflows run successfully, and push for gh-pages successfully, <strong>But</strong> the github <strong>pages build failed</strong></p>
 </li>
@@ -535,7 +531,7 @@ Your site is having problems building: Page build failed. For more information, 
 <ul>
 <li>step1<ul>
 <li>use   <code>zanderzhao/gitbook-action@master</code> </li>
-<li>or <code>zanderzhao/gitbook-action@1.2.3</code> or latest</li>
+<li>or <code>zanderzhao/gitbook-action@v1.2.4</code> or latest</li>
 </ul>
 </li>
 <li>step2<ul>
@@ -546,7 +542,7 @@ Your site is having problems building: Page build failed. For more information, 
 </ul>
 </li>
 </ul>
-<div id="gitalk-container"></div>
+
                                 
                                 </section>
                             
@@ -589,7 +585,7 @@ Your site is having problems building: Page build failed. For more information, 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ERROR","level":"3.3","depth":1,"next":{"title":"WARNING","level":"3.4","depth":1,"path":"warning.md","ref":"warning.md","articles":[]},"previous":{"title":"FAQ","level":"3.2","depth":1,"anchor":"#faq","path":"README.md","ref":"README.md#faq","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","mygitalk@git+https://github.com/plugins-zander/gitbook-plugin-mygitalk.git","edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git","sitemap-general@git+https://github.com/plugins-zander/gitbook-plugin-sitemap-general.git","gtag@git+https://github.com/plugins-zander/gitbook-plugin-gtag.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://zlogs.net/gitbook-action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"UA-149127400-1"},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"mygitalk":{"flipMoveOptions":{},"clientID":"364365ceb2659b383d73","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["zanderzhao"],"createIssueManually":false,"distractionFreeMode":false,"repo":"talk","owner":"zanderzhao","enableHotKey":true,"clientSecret":"447ef6648e9dfffe2e2a65c34c8ead1dd4b7af54","pagerDirection":"last","labels":["Gitalk"]},"edit-link":{"label":"EDIT","base":"https://github.com/ZanderZhao/gitbook-action/edit/master/gitbook-source"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Zander Zhao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"error.md","mtime":"2020-10-21T07:29:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-21T09:08:28.195Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ERROR","level":"3.3","depth":1,"next":{"title":"WARNING","level":"3.4","depth":1,"path":"warning.md","ref":"warning.md","articles":[]},"previous":{"title":"FAQ","level":"3.2","depth":1,"anchor":"#faq","path":"README.md","ref":"README.md#faq","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","edit-link@git+https://github.com/plugins-zander/gitbook-plugin-edit-link.git","sitemap-general@git+https://github.com/plugins-zander/gitbook-plugin-sitemap-general.git","gtag@git+https://github.com/plugins-zander/gitbook-plugin-gtag.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://zlogs.net/gitbook-action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"UA-149127400-1"},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"edit-link":{"label":"EDIT","base":"https://github.com/ZanderZhao/gitbook-action/edit/master/gitbook-source"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Zander Zhao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"error.md","mtime":"2020-10-23T15:15:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-23T15:26:32.840Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -608,18 +604,6 @@ Your site is having problems building: Page build failed. For more information, 
     
         
         <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="https://cdn.jsdelivr.net/gh/ZanderZhao/cdn/js/md5.min.js"></script>
-        
-    
-        
-        <script src="https://cdn.jsdelivr.net/gh/ZanderZhao/cdn/js/gitalk.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
         
     
         
