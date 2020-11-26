@@ -726,9 +726,10 @@ if ${INPUT_GITBOOK_PDF} || ${INPUT_GITBOOK_EPUB} || ${INPUT_GITBOOK_MOBI} ; then
   fi
 fi
 
-gitbook init
+gitbook install
 
 gitbook build --gitbook=${GITBOOK_BUILD_VERSION} ./ ./docs
+
 if [ $? -eq 0 ]; then
   print_info "Message:gitbook built success"
 else  # need plugins or README.md SUMMARY.md
